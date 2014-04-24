@@ -73,32 +73,67 @@ public class BSTSet {
    */
   public int height()
   {
-    // NOT YET IMPLEMENTED
-    return 0;
+    return height(root);
   }
+  
+  private int height(Node t)
+  {
+	  //base case: break the recursion when a null node is found
+	  if(t == null) return -1;
+	  //now take the max of the left and the right subtree heights and add one to each
+	  return Math.max(height(t.left), height(t.right)) + 1;
+	  
+	 
+  }
+  
+  
   /** 
    * 3. sizeOdd - number of Nodes with an odd key
    */
   public int sizeOdd()
   {
-    // NOT YET IMPLEMENTED
-    return 0;
+    return sizeOdd(root);
+  }
+  private int sizeOdd(Node t){
+	  //base case: break when you find a null node
+	  if(t == null)return 0;
+	  
+	  //2 cases here, check to see if the key is even or odd, if odd add 1 to the
+	  //running total
+	  
+	  //even case
+	  if(t.key%2 == 0) return sizeOdd(t.left) + sizeOdd(t.right) + 0;
+	  //odd case
+	  else return sizeOdd(t.left) + sizeOdd(t.right) + 1;
   }
   /** 
    * 4. isPerfectlyBalancedS - at each Node, do left and right subtrees have same size?
    */
   public boolean isPerfectlyBalancedS()
   {
-    // NOT YET IMPLEMENTED
-    return false;
+    return isPerfectlyBalancedS(root);
   }
+  
+  private boolean isPerfectlyBalancedS(Node t){
+	  if(t == null)return true;
+	  return(isPerfectlyBalancedS(t.left) && isPerfectlyBalancedS(t.right) 
+			  && (Math.abs(size(t.left) - size(t.right)) <= 1));
+	  
+	
+  }
+  
   /**
    * 5. isPerfectlyBalancedH - at each Node, do left and right subtrees have same height?
    */
   public boolean isPerfectlyBalancedH()
   {
-    // NOT YET IMPLEMENTED
-    return false;
+	  return isPerfectlyBalancedH(root);
+  }
+  
+  private boolean isPerfectlyBalancedH(Node t){
+	  if(t == null)return true;
+	  return(isPerfectlyBalancedH(t.left) && isPerfectlyBalancedH(t.right) 
+			  && (Math.abs(height(t.left) - height(t.right)) <= 1));
   }
   /**
    * 6. isOddBalanced - at each Node, do left and right subtrees contain the same number of odd keys?
