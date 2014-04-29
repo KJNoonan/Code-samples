@@ -139,6 +139,9 @@ public class BSTSet {
 	 * @returns true/false
 	 */
 	private boolean isPerfectlyBalancedS(Node t) {
+		return false;
+		//was shown a better way in class
+		/*
 		// base case return true if a null node. Then next return should do the
 		// determining
 		if (t == null)
@@ -148,6 +151,7 @@ public class BSTSet {
 		// then make the recursive calls
 		return (isPerfectlyBalancedS(t.left) && isPerfectlyBalancedS(t.right) && size(t.left)
 				- size(t.right) == 0);
+		*/
 	}
 
 	/**
@@ -167,6 +171,9 @@ public class BSTSet {
 	 * @returns true/false
 	 */
 	private boolean isPerfectlyBalancedH(Node t) {
+		return false;
+		//was shown a better way in class
+		/*
 		// base case return true if a null node. Then next return should do the
 		// determining
 		if (t == null)
@@ -176,6 +183,7 @@ public class BSTSet {
 		// then make the recursive calls
 		return (isPerfectlyBalancedH(t.left) && isPerfectlyBalancedH(t.right) && (height(t.left)
 				- height(t.right) == 0));
+				*/
 	}
 
 	/**
@@ -195,6 +203,10 @@ public class BSTSet {
 	 * @returns true/false
 	 */
 	private boolean isOddBalanced(Node t) {
+		
+		return false;
+		//was shown a better way in class
+		/*
 		// base case return true if a null node. Then next return should do the
 		// determining
 		if (t == null)
@@ -204,6 +216,7 @@ public class BSTSet {
 		// then make the recursive calls
 		return isOddBalanced(t.left) && isOddBalanced(t.right)
 				&& (sizeOdd(t.left) == sizeOdd(t.right));
+		*/
 	}
 
 	/**
@@ -242,8 +255,16 @@ public class BSTSet {
 	 *            a given depth
 	 */
 	public int sizeAtDepth(int k) {
-		// NOT YET IMPLEMENTED
-		return 0;
+	
+		return sizeAtDepth(root, k, 0);
+	}
+	private int sizeAtDepth(Node t, int k, int d)
+	{
+		 if(t == null) return 0;
+		 else if (d == k) return 1;
+		
+		
+		return sizeAtDepth(t.right, k, d+1) + sizeAtDepth(t.left, k, d+1);
 	}
 
 	/**
@@ -473,8 +494,8 @@ public class BSTSet {
 
 	public static void main(String[] args) {
 		StdDraw.setCanvasSize(1200, 700);
-		//BSTSet set = BSTSet.fromString("40 60 70 50 20 10 30 35");
-		BSTSet set = BSTSet.fromString("90 30 100 10 80 20 40 60 5 85 35 95 105 2 6 110 103 104 102 93 97 96 82 86 12 21 45 62 106 111 92 94 98 34 36");
+		BSTSet set = BSTSet.fromString("40 60 70 50 20 10 30 35");
+		//BSTSet set = BSTSet.fromString("31 28 65 21 29 50 68 25 52 67 71");
 		set.drawTree();
 		StdDraw.show();
 
