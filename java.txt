@@ -1,0 +1,9 @@
+semiBalanced - Either 0 or 2 Children
+			- for non-leaf nodes (sizeLargerSubtree//sizeSmallerSubtree) <= 2 <integer division>
+*******Midterm Review ...sorta**********
+	AVL Trees 
+	- Actually a BST
+	- at every node the height of the left and right subtrees can differ at most 1
+	- BST methods requires a few modifications to balance as AVL
+	- specifically put and delete
+	- 
