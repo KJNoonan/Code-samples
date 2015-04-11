@@ -3,6 +3,14 @@
  * A Measurement application that will convert length measurements
  * 4/11/2015
  *****************************************************/
+var reset = function(){
+  var iUnits, cUnits;
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("number").value = "";
+  document.getElementById("units").selectedIndex = 0;
+  document.getElementById("cUnits").selectedIndex = 1;
+
+}
 var calcFunct = function(){
    var initNumber, initUnits, cUnits, cNumber, output;
   iNumber = document.getElementById("number").value;
@@ -50,11 +58,12 @@ var calcFunct = function(){
       cNumber = iNumber * 39.3701;
     }
   }
- 
- output = "Converted Measurement: " + Math.round(cNumber * 100)/100 + " " + backToUnitNames(cUnits);
- document.getElementById("result").innerHTML = output;
-  
-  
+ if(isNaN(cNumber)){
+    document.getElementById("result").innerHTML = "Number field must contain valid numbers";
+ }else{
+    output = "Converted Measurement: " + Math.round(cNumber * 100)/100 + " " + backToUnitNames(cUnits);
+    document.getElementById("result").innerHTML = output;  
+  }
 }
 
 function backToUnitNames(val){
@@ -92,5 +101,9 @@ window.onload = function(){
     initSelect.appendChild(opt1);
     convSelect.appendChild(opt2);
   }
+  initSelect.selectedIndex = 0;
+  convSelect.selectedIndex = 1;
   document.getElementById("calc").onclick = calcFunct;
+  document.getElementById("reset").onclick = reset;
+  document.getElementById("number").onkeypress = isNumbers(event);
 }
