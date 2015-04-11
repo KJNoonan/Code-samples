@@ -1,0 +1,32 @@
+<!--Kevin Noonan-->
+<!-- A Measurement application that will convert length measurements -->
+<!-- 4/11/2015 -->
+<!doctype html>
+<html>
+  <head>
+    <title>Measurement Converion</title>
+	<script src="calc.js"></script>
+    <link rel="stylesheet" type="text/css" href="format.css">
+  </head>
+  <body>
+    	<h1 id="header">Measurement Converter</h1>
+	<p>
+	  <label for="number">Number:</label>
+	  <label for="units">Units:</label>
+	  <br>
+	  <input id="number" type="text" size="4"/>
+	  <select id="units"></select>
+	</p>
+
+	<p>
+	  <label for ="cUnits">Converted Units</label>
+	  <br>
+	  <select id="cUnits"></select>
+	  <input type="button" id="calc" value="Convert" />   
+	</p>
+
+	<p id="result">
+	</p>
+
+  </body>
+</html>
