@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<!-- Archaeology game board -->
+<!-- Written by Craig Miller, April 2012 -->
+<!-- Modified by Craig Miller, September 2012 -->
+
+
+<head>
+<meta charset="UTF-8">
+<title>Game Board</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="board.js"></script>
+<script type="text/javascript" src="game.js"></script>
+</head>
+
+<body>
+
+<h1>Archaeology Board</h1>
+<div id="container">
+	<div id="gameBoard">
+		<table id="board">
+		</table>
+	</div>
+	<div id="siteList">
+		
+	</div>
+</div>
+<div id="ui">
+	<div id="columns">
+		<span>Column</span><br>
+		<select id="colSelection">
+		</select>
+	</div>
+	<div id="rows">
+		<span>Row</span><br>
+		<select id="rowSelection">
+		</select>
+	</div>
+	<div id="button">
+	<br><input type="button" id="digBtn" value="Dig!">
+	</div>
+</div>
+
+</body>
+</html>

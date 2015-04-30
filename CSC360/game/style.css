@@ -1,0 +1,21 @@
+#gameBoard{
+	float:left;
+}
+#container{
+	overflow:auto;
+}
+#output{
+	padding-left:10px;
+	float:left;
+}
+#ui{
+	float:center;
+	overflow:auto;
+}
+#columns{
+	float:left;
+}
+#rows, #button{
+	padding-left: 10px;
+	float:left;
+}
