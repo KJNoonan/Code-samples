@@ -12,10 +12,16 @@
 	float:center;
 	overflow:auto;
 }
-#columns{
+#rows{
 	float:left;
 }
-#rows, #button{
+#columns, #button{
 	padding-left: 10px;
 	float:left;
+}
+.success{
+	color:green;
+}
+.fail{
+	color:red;
 }
